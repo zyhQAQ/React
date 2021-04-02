@@ -1,0 +1,11 @@
+.tab-control{
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 10px;
+}
+.tab{
+    color: red;
+    border-bottom: 1px dotted black;
+}

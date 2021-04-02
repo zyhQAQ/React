@@ -4,7 +4,7 @@ class Tab extends Component {
     constructor(){
         super();
         this.state = {
-            tabname:['精选','首页','专区'],
+            tabname:['精选','首页','专区','个人'],
             index:0,
         }
     }

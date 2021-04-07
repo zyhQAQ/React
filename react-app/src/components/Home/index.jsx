@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import Homeson from './Son'
 import Tab from '../Tab'
 import Profile from '.././Profile'
+import NavBar from '../NavBar'
+import NavBar2 from '../NavBar2'
+
 class Home extends Component {
     constructor(){
         super();
         this.state = {
             num: 0,
             currentitle:"新款",
-            title:['新款','精选','流行']
+            title:['新款','精选','流行','个人']
         };
     }
     componentDidMount(){
@@ -34,6 +37,13 @@ class Home extends Component {
                 <Profile></Profile>
                 <div>{this.state.num}</div>
                 <Homeson onClick={this.add}></Homeson>
+                <NavBar>
+                    <span>left</span>
+                    <strong>center</strong>
+                    <span>right</span>
+                </NavBar>
+                <NavBar2 leftsolt={<span>left</span>} centersolt={<strong>middle</strong>} rightsolt={<span>right</span>}>
+                </NavBar2>
             </div>
         );
     }

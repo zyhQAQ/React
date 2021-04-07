@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Homeson from './Son'
 import Tab from '../Tab'
+import Profile from '.././Profile'
 class Home extends Component {
     constructor(){
         super();
@@ -15,12 +16,24 @@ class Home extends Component {
     }
     add = () => {
         this.setState({num : this.state.num + 1});
+        console.log('当前的值为'+this.state.num);
+        //为了避免setstate的合并  可以使用这种回调记进行累加
+        
+        this.setState((prestate, props) => {
+            return {
+                num: prestate.num + 1,
+            }
+        });
+
     }
     render() {
         return (
             <div>
                 <Tab tabname={this.state.title} tabclick = {(index)=>this.itemclick(index)}/>
                 <div>{this.state.currentitle}</div>
+                <Profile></Profile>
+                <div>{this.state.num}</div>
+                <Homeson onClick={this.add}></Homeson>
             </div>
         );
     }
